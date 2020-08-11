@@ -14,12 +14,12 @@ struct userData {
 struct animal {
     /// All of the animals
     static let animals : [animal] = {
-        let bear: animal = .init(image: UIImage(named: "bear")!, name: "bear")
-        let cat: animal = .init(image: UIImage(named: "cat")!, name: "cat")
-        let dog: animal = .init(image: UIImage(named: "dog")!, name: "dog")
-        let elephant: animal = .init(image: UIImage(named: "elephant")!, name: "elephant")
-        let monkey: animal = .init(image: UIImage(named: "monkey")!, name: "monkey")
-        let penguin: animal = .init(image: UIImage(named: "penguin")!, name: "penguin")
+        let bear: animal = .init(image: UIImage(named: "bear")!, name: "Bear")
+        let cat: animal = .init(image: UIImage(named: "cat")!, name: "Cat")
+        let dog: animal = .init(image: UIImage(named: "dog")!, name: "Dog")
+        let elephant: animal = .init(image: UIImage(named: "elephant")!, name: "Elephant")
+        let monkey: animal = .init(image: UIImage(named: "monkey")!, name: "Monkey")
+        let penguin: animal = .init(image: UIImage(named: "penguin")!, name: "Penguin")
         return [bear, cat, dog, elephant, monkey, penguin]
     }()
     var image: UIImage
