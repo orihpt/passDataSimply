@@ -57,10 +57,10 @@ class AnimalsTableViewController: UITableViewController {
         // Now, we are showing the Animal View Controller
         
         let viewControllerIdentifier = "animalVC"
-        // The identifier can found and be edited by:
+        // How you can find and edit the identifier:
         /// - 1. Open the storyboard.
         /// - 2. Select the 'Animal View Controller' View Controller.
-        /// - 3. Open the menu on the left side of the screen.
+        /// - 3. Open the menu on the right side of the screen.
         /// - 4. In the navigation bar on the top of the screen, press the litle newspaper icon
         /// - 5. The identifier is 'Storyboard ID'
         
