@@ -1,5 +1,5 @@
 //
-//  AnimalsTableViewController.swift
+//  myZooTableViewController.swift
 //  passDataSimply
 //
 //  Created by אורי האופטמן on 11/08/2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AnimalsTableViewController: UITableViewController {
+class myZooTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,28 +16,34 @@ class AnimalsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    // Every time this view appears
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Here we set the number of rows to be the number of the animals
-        return Animal.animals.count
+        // #warning Incomplete implementation, return the number of rows
+        return userData.zoo.count
     }
     
     // When a cell need to be generated
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Here we creating a cell for each animal
         let cell: UITableViewCell = .init(style: .default, reuseIdentifier: nil)
         
-        // Get the animal from the animals list.
-        let animal = Animal.animals[indexPath.row]
-
+        // Get the animal from the zoo.
+        let animal = userData.zoo[indexPath.row]
+        
         cell.textLabel?.text = animal.name
         cell.imageView?.image = animal.image
         
@@ -47,7 +53,31 @@ class AnimalsTableViewController: UITableViewController {
         return cell
     }
     
-    // When the user press a cell
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // When the user remove an animal from the zoo
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            userData.zoo.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    // Can the user move the animals' locations in the zoo?
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // When the user move animal's location in the zoo
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let animal = userData.zoo.remove(at: fromIndexPath.row)
+        userData.zoo.insert(animal, at: to.row)
+        tableView.moveRow(at: fromIndexPath, to: to)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedAnimal = Animal.animals[indexPath.row]
         
@@ -68,5 +98,6 @@ class AnimalsTableViewController: UITableViewController {
         let secondViewController = storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier) as UIViewController
         navigationController?.pushViewController(secondViewController, animated: true)
     }
-
+    
+    
 }

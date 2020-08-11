@@ -17,6 +17,7 @@
 		594E70F324E2B8E100A58445 /* passDataSimplyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E70F224E2B8E100A58445 /* passDataSimplyUITests.swift */; };
 		594E710124E2BC2000A58445 /* AnimalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E710024E2BC2000A58445 /* AnimalsTableViewController.swift */; };
 		594E710624E2BC5000A58445 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E710524E2BC5000A58445 /* helpers.swift */; };
+		5999DDE624E2CD8900BA15F9 /* myZooTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999DDE524E2CD8900BA15F9 /* myZooTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		594E70F424E2B8E100A58445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		594E710024E2BC2000A58445 /* AnimalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsTableViewController.swift; sourceTree = "<group>"; };
 		594E710524E2BC5000A58445 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		5999DDE524E2CD8900BA15F9 /* myZooTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myZooTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				594E70D424E2B8E000A58445 /* AnimalViewController.swift */,
 				594E710024E2BC2000A58445 /* AnimalsTableViewController.swift */,
+				5999DDE524E2CD8900BA15F9 /* myZooTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				594E70D124E2B8E000A58445 /* AppDelegate.swift in Sources */,
 				594E710124E2BC2000A58445 /* AnimalsTableViewController.swift in Sources */,
 				594E710624E2BC5000A58445 /* helpers.swift in Sources */,
+				5999DDE624E2CD8900BA15F9 /* myZooTableViewController.swift in Sources */,
 				594E70D324E2B8E000A58445 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

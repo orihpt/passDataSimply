@@ -8,18 +8,20 @@
 import UIKit
 
 struct userData {
-    static var selectedAnimal: animal? = nil
+    static var selectedAnimal: Animal? = nil
+    static var zoo: [Animal] = []
 }
 
-struct animal {
+/// Our animal struct. Equatable protocol to be able to do things like 'if cat == bear'
+struct Animal: Equatable {
     /// All of the animals
-    static let animals : [animal] = {
-        let bear: animal = .init(image: UIImage(named: "bear")!, name: "Bear")
-        let cat: animal = .init(image: UIImage(named: "cat")!, name: "Cat")
-        let dog: animal = .init(image: UIImage(named: "dog")!, name: "Dog")
-        let elephant: animal = .init(image: UIImage(named: "elephant")!, name: "Elephant")
-        let monkey: animal = .init(image: UIImage(named: "monkey")!, name: "Monkey")
-        let penguin: animal = .init(image: UIImage(named: "penguin")!, name: "Penguin")
+    static let animals : [Animal] = {
+        let bear: Animal = .init(image: UIImage(named: "bear")!, name: "Bear")
+        let cat: Animal = .init(image: UIImage(named: "cat")!, name: "Cat")
+        let dog: Animal = .init(image: UIImage(named: "dog")!, name: "Dog")
+        let elephant: Animal = .init(image: UIImage(named: "elephant")!, name: "Elephant")
+        let monkey: Animal = .init(image: UIImage(named: "monkey")!, name: "Monkey")
+        let penguin: Animal = .init(image: UIImage(named: "penguin")!, name: "Penguin")
         return [bear, cat, dog, elephant, monkey, penguin]
     }()
     var image: UIImage

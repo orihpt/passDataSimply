@@ -1,18 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QEr-yP-C3x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eo0-pa-Vkk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--My zoo-->
+        <scene sceneID="57U-tK-gkB">
+            <objects>
+                <navigationController id="Oen-cE-9Bj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My zoo" image="person" catalog="system" selectedImage="person.fill" id="XEj-q7-tTq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xFb-DX-kiK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rN4-2e-tTC" kind="relationship" relationship="rootViewController" id="wq0-76-0Eu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKJ-Lg-swC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830" y="-587"/>
+        </scene>
+        <!--My zoo-->
+        <scene sceneID="8uU-EM-fyO">
+            <objects>
+                <tableViewController id="rN4-2e-tTC" customClass="myZooTableViewController" customModule="passDataSimply" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Kpr-di-KR7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o50-Nl-auj">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o50-Nl-auj" id="KGd-4V-oex">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rN4-2e-tTC" id="38L-KG-qt8"/>
+                            <outlet property="delegate" destination="rN4-2e-tTC" id="Qeo-3I-FBt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My zoo" id="27t-Rv-uGD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ba1-Tw-pUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="-587"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AE1-Rt-NQi">
+            <objects>
+                <tabBarController id="eo0-pa-Vkk" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eBK-uW-Ouv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QEr-yP-C3x" kind="relationship" relationship="viewControllers" id="laR-he-UGK"/>
+                        <segue destination="Oen-cE-9Bj" kind="relationship" relationship="viewControllers" id="GOE-go-v7a"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cr-mE-nv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2455" y="-269"/>
+        </scene>
+        <!--Animals-->
         <scene sceneID="bxh-Mi-yiU">
             <objects>
                 <navigationController id="QEr-yP-C3x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Animals" image="list.bullet" catalog="system" id="6ZC-uV-rVc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ujv-o2-Sve">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -32,7 +98,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cvB-gL-bnX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="XLc-fp-dnf" style="IBUITableViewCellStyleDefault" id="BXB-Ky-axt">
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
@@ -83,20 +149,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD8-Y8-aOg">
+                                <rect key="frame" x="20" y="814" width="374" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Add to my zoo">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToMyZooButtonPressed:" destination="B1W-MY-5Ln" eventType="touchUpInside" id="3OD-lD-teo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0sx-8y-zWf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0sx-8y-zWf" firstAttribute="trailing" secondItem="UD8-Y8-aOg" secondAttribute="trailing" constant="20" id="0al-18-bQa"/>
+                            <constraint firstItem="UD8-Y8-aOg" firstAttribute="centerX" secondItem="5pQ-1F-QQV" secondAttribute="centerX" id="QnD-pk-Q4e"/>
                             <constraint firstItem="3sF-wv-cYp" firstAttribute="top" secondItem="0sx-8y-zWf" secondAttribute="top" constant="40" id="WRy-LF-jYQ"/>
                             <constraint firstItem="qgZ-Dz-k4W" firstAttribute="leading" secondItem="0sx-8y-zWf" secondAttribute="leading" constant="40" id="X49-bI-qqW"/>
                             <constraint firstItem="0sx-8y-zWf" firstAttribute="trailing" secondItem="3sF-wv-cYp" secondAttribute="trailing" constant="40" id="Z06-WD-vcp"/>
+                            <constraint firstItem="UD8-Y8-aOg" firstAttribute="leading" secondItem="0sx-8y-zWf" secondAttribute="leading" constant="20" id="aoh-Gm-g41"/>
                             <constraint firstItem="3sF-wv-cYp" firstAttribute="leading" secondItem="0sx-8y-zWf" secondAttribute="leading" constant="40" id="cSB-O5-Auj"/>
                             <constraint firstItem="0sx-8y-zWf" firstAttribute="trailing" secondItem="qgZ-Dz-k4W" secondAttribute="trailing" constant="40" id="nyA-1x-ZsE"/>
                             <constraint firstItem="qgZ-Dz-k4W" firstAttribute="top" secondItem="3sF-wv-cYp" secondAttribute="bottom" constant="5" id="oVz-OO-3f7"/>
+                            <constraint firstItem="0sx-8y-zWf" firstAttribute="bottom" secondItem="UD8-Y8-aOg" secondAttribute="bottom" constant="15" id="yXf-DD-bfG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="bR1-kE-sZo"/>
                     <connections>
+                        <outlet property="addToZooButton" destination="UD8-Y8-aOg" id="50J-9y-jZH"/>
                         <outlet property="animalImageView" destination="3sF-wv-cYp" id="pNk-aB-Lsc"/>
                         <outlet property="animalNameLabel" destination="qgZ-Dz-k4W" id="B79-WV-5AY"/>
                     </connections>
@@ -124,6 +205,12 @@
     </scenes>
     <resources>
         <image name="bear" width="1000" height="667"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="AccentColor">
+            <color red="0.3529999852180481" green="0.7839999794960022" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
