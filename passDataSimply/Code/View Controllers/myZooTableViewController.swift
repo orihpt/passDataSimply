@@ -79,7 +79,7 @@ class myZooTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedAnimal = Animal.animals[indexPath.row]
+        let selectedAnimal = userData.zoo[indexPath.row]
         
         // Here we are writing what animal did the user pressed
         userData.selectedAnimal = selectedAnimal
